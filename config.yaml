@@ -1,0 +1,9 @@
+version: 1.0.0
+seeders:
+  - file: seed1.rb
+  - file: seed2.rb
+parsers:
+  - page_type: home
+    file: home.rb
+  - page_type: status200
+    file: status200.rb
