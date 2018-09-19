@@ -1,16 +1,32 @@
-require '../libraries/cat'
+puts `pwd`
+
+require './libraries/hello'
 
 hello = Hello.new
+puts "hello say #{hello.say}"
+puts "page gid:#{page['gid']}"
+puts "page #{page}"
 
-body = Nokogiri.HTML(page.content)
+puts "content #{content}"
 
-text = "#{hello.say} #{body.text}"
+nokogiri = Nokogiri.HTML(content)
+
+heading = nokogiri.at('h1').text
+text = nokogiri.text
 
 doc1 = {
-    collection: "home",
+    _collection: "home",
+    _id: "1234",
     text: text,
-    headers: page.headers,
-    url: page.url
+    heading: heading,
+    response_headers: page['response_headers'],
+    # url: page.url
 }
 
-output << doc1
+outputs << doc1
+pages << {
+  url: "http://fetchtest.datahen.com/statuses/200?q=queuedFromParser",
+  vars: {"abc":[1,2,3], "def": "defcontent"}
+}
+
+puts "inspect page: #{page}"
