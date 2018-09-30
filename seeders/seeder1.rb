@@ -1,1 +1,0 @@
-puts "starting seeder 1"
