@@ -1,10 +1,10 @@
-body = Nokogiri.HTML(page.content)
+body = Nokogiri.HTML(content)
 
 doc = {
     collection: "statuses",
     text: body.text,
-    headers: page.headers,
-    url: page.url
+    headers: page['headers'],
+    url: page['url']
 }
 
-output << doc
+outputs << doc
