@@ -1,7 +1,7 @@
 body = Nokogiri.HTML(content)
 
 doc = {
-    collection: "statuses",
+    hello: "2"
     text: body.text,
     headers: page['headers'],
     url: page['url']
