@@ -21,6 +21,7 @@ doc1 = {
     heading: heading,
     response_headers: page['response_headers'],
     # url: page.url
+    some_vars: vars
 }
 
 outputs << doc1
