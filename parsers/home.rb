@@ -11,22 +11,38 @@ puts "content #{content}"
 
 nokogiri = Nokogiri.HTML(content)
 
-heading = nokogiri.at('h1').text
+h1 = nokogiri.at('h1')
+heading = h1.nil? ? '' : h1.text 
 text = nokogiri.text
 
 doc1 = {
     _collection: "home",
-    _id: "1234",
+    # _id: "1234",
+    text: text,
+    heading: heading,
+    response_headers: page['response_headers'],
+    # url: page.url
+}
+doc2 = {
+    _collection: "home",
+    # _id: "12345",
     text: text,
     heading: heading,
     response_headers: page['response_headers'],
     # url: page.url
 }
 
+
 outputs << doc1
+outputs << {}
+outputs << doc2
+
+
 pages << {
-  url: "http://fetchtest.datahen.com/statuses/200?q=queuedFromParser",
+  url: "http://fetchtest.datahen.com/statuses/200?q=queuedFromParserWithVars",
   vars: {"abc":[1,2,3], "def": "defcontent"}
 }
 
 puts "inspect page: #{page}"
+
+puts "inspect vars: #{vars}"

@@ -7,9 +7,6 @@ parsers:
     file: ./parsers/default.rb
   - page_type: home
     file: ./parsers/home.rb
-    disabled: true
+    disabled: false
   - page_type: status200
-    file: ./parsers/status200.rb
-  - page_type: (?i)StaTus\d*
-    regexp: true
     file: ./parsers/status200.rb
