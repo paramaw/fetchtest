@@ -22,6 +22,7 @@ doc1 = {
     heading: heading,
     response_headers: page['response_headers'],
     # url: page.url
+    some_vars: vars
 }
 doc2 = {
     _collection: "home",
@@ -30,6 +31,7 @@ doc2 = {
     heading: heading,
     response_headers: page['response_headers'],
     # url: page.url
+    some_vars: vars
 }
 
 
